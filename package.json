@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/rsnow67/gb-node-js-project/issues"
   },
-  "homepage": "https://github.com/rsnow67/gb-node-js-project#readme"
+  "homepage": "https://github.com/rsnow67/gb-node-js-project#readme",
+  "dependencies": {
+    "colors": "^1.4.0"
+  }
 }
