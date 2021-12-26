@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node cli.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +20,8 @@
   "homepage": "https://github.com/rsnow67/gb-node-js-project#readme",
   "dependencies": {
     "colors": "^1.4.0",
-    "moment": "^2.29.1"
+    "inquirer": "^8.2.0",
+    "moment": "^2.29.1",
+    "yargs": "^17.3.1"
   }
 }
