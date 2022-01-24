@@ -19,25 +19,18 @@ const server = http.createServer((req, res) => {
 		return readStream.pipe(res);
 	}
 
-	const readStream = fs.createReadStream(path.join(__dirname, 'index.html'));
-	readStream.pipe(res);
-
-	let list = '';
+	let list = '<ul class="catalog">';
 	fs.readdirSync(fullPath).forEach((fileName) => {
 		const filePath = path.join(req.url, fileName);
-		list += `<li class="catalog__item">
-			<a href="${filePath}">${fileName}</a>
-	</li>`;
+		list += `\n\t\t<li class="catalog__item"><a href="${filePath}">${fileName}</a></li>`;
 	});
+	list += '\n\t</ul>';
 
+	const html = fs.readFileSync(path.join(__dirname, 'index.html'), 'utf-8');
 	res.writeHead(200, 'OK', {
 		'Content-Type': 'text/html',
 	});
-	res.write(`<body>
-		<ul class="catalog">
-			${list}
-		</ul>
-	</body>`);
+	res.end(html.replace('#__CONTENT__#', list));
 });
 
 server.listen(port, host, () => {
