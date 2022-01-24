@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/rsnow67/gb-node-js-project#readme",
   "dependencies": {
-    "colors": "^1.4.0"
+    "colors": "^1.4.0",
+    "moment": "^2.29.1"
   }
 }
